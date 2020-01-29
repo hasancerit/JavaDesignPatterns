@@ -19,4 +19,8 @@ public class ComputerFactory {
 		
 		return null;
     }
+    
+    //OCP'ye aykırı.
+    //Scalable, if elseler sınırsız artabilir.
+    //yani anti-pattern
 }
