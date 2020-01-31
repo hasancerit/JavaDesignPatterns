@@ -1,0 +1,10 @@
+ “Tasarım kalıpları, temel nesne-merkezli prensipleri kullanarak doğru sorumlulukları bulmamıza (finding responsibilities), 
+değişimi göz önüne alarak bu sorumlulukları nesnelere dağıtmamıza (highly-cohesive objects) ve nesneleri,
+ aralarında az bağımlılık olacak şekilde (lowly-coupled objects) kurgulamamıza yardımcı olur.
+ Bir başka deyişle tasarım kalıpları, yüksek birliktelikli ve düşük bağımlılıklı yapıları nasıl kurgulayacağımızı,
+sıklıkla karşılaşılan problemler bağlamında, model olarak ortaya koyar.”
+
+Proxy:Burada elimizde, kendisine erişimi, herhangi bir sebepten dolayı kontrol etmek istediğimiz bir nesne söz konusudur. 
+Bu nesne çok değerli ya da çok tehlikeli olduğu için kendisine ulaşımı kontrol etmek isteyebiliriz. Yani kimse bu nesneye doğrudan ulaşmasın, 
+arada ulaşımı sağlayan bir elçi, geçiş sağlayan nesne olsun isteriz. Ya da GoF’da anlatıldığı gibi bellek ve CPU açısından pahalı olan bir nesnenin oluşturulmasını,
+ gerçekten o nesneye ihtiyaç duyuncaya kadar geciktirmek ama aynı zamanda sistemin sanki bu nesne zaten varmış gibi davranmasını isteyebiliriz.
