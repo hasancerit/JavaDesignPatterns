@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package volt;
+package compositepattern;
 
 /**
  *
  * @author Hasan
  */
-public class Volt {
+public interface Employee {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+    public boolean addEmployee(Employee employee);
+
+    public boolean removeEmployee(Employee employee);
+
+    public String getInfo();
 }
