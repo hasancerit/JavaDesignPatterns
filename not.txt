@@ -18,3 +18,6 @@ Arka tarafta bulunup, süreci yerine getiren nesnelerle ön taraftaki client ara
 hizmet alır. Client bu hizmeti alırken, sürecin detaylarından etkilenmez, sürecin işlemesi için gerekli bilgileri Façade’a sağlayarak, Façade’ın süreci çalıştırıp 
 kendisine dönmesini bekler.
 Bu desen, istemci tarafından istenen basitleştirilmiş yöntemler ve var olan sistem sınıfları yöntemlerine yapılan çağrıları veren tek bir sınıfı içerir.
+
+
+Bridge:Soyutlama ve soyutlamanın impleri arasındaki bağı esnekleştirmek için kullanılır. Araya köprü interface gelir.
