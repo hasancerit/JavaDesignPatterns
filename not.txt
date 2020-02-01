@@ -8,3 +8,13 @@ Proxy:Burada elimizde, kendisine erişimi, herhangi bir sebepten dolayı kontrol
 Bu nesne çok değerli ya da çok tehlikeli olduğu için kendisine ulaşımı kontrol etmek isteyebiliriz. Yani kimse bu nesneye doğrudan ulaşmasın, 
 arada ulaşımı sağlayan bir elçi, geçiş sağlayan nesne olsun isteriz. Ya da GoF’da anlatıldığı gibi bellek ve CPU açısından pahalı olan bir nesnenin oluşturulmasını,
  gerçekten o nesneye ihtiyaç duyuncaya kadar geciktirmek ama aynı zamanda sistemin sanki bu nesne zaten varmış gibi davranmasını isteyebiliriz.
+
+Facade:Çoğunlukla kullandığımız algoritmalar veya iş mantığı, bir süreç oluşturacak şekilde, pek çok farklı nesneden hizmet alarak ilerler.
+ Süreç, hangi nesneden hangi durumlarda hizmet alınacağı bilgisini detayıyla ifade eder. Süreç, aynı zamanda pek çok iş kuralı ile de yönlendirilir. 
+Böyle durumlarda client nesnelerin, süreci tüm detayıyla bilmelerini istemeyiz.
+Arka tarafta bulunup, süreci yerine getiren nesnelerle ön taraftaki client arasına konan Façade, algoritma ya da iş mantığındaki süreci tüm detaylarını bilir.
+ Bu şekilde bir ara nesne olarak Facade, clientı, süreci yerine getiren nesnelerden yalıtmakta kullanılır. Façade, sürecin tüm detaylarını bilir ama bu detayların
+ hepsini arayüzünde dışarıya sunmaz, muhtemelen arayüzünde bir seferde çok iş yapacak şekilde, coarse grained metotlar sağlar Client ise bu şekilde Façade nesnesinden 
+hizmet alır. Client bu hizmeti alırken, sürecin detaylarından etkilenmez, sürecin işlemesi için gerekli bilgileri Façade’a sağlayarak, Façade’ın süreci çalıştırıp 
+kendisine dönmesini bekler.
+Bu desen, istemci tarafından istenen basitleştirilmiş yöntemler ve var olan sistem sınıfları yöntemlerine yapılan çağrıları veren tek bir sınıfı içerir.
