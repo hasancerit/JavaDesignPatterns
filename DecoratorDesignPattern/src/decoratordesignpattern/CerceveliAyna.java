@@ -6,18 +6,14 @@
 package decoratordesignpattern;
 
 import decorator.AynaDecorator;
-
 /**
- *Ayna impine yeni bir metod vs. buradan eklenir. AynaDecorator sinifi miras alınır.
- *AynaDecorator abst sinifi icinde olusturulan(comp) ayna nesnesi, Ayna sinifina metod eklenmeyen saf halidir.
+ *Ayna impinde bir degisiklik(Produce metodunda baska bir ek metod cagirmak gibi) burada yapilir.
+ *AynaDecorator abst sinifi icinde olusturulan(comp) ayna nesnesi, Ayna sinifinda degisiklik yapilmayan saf halidir.
  *
- *
- *Ayna'ya ek bir özellik eklemek istediğimizde buraya ekleriz. ve 
- * new ile Bu nesneyi olustururuz.
- * Bu nesne ayni zamanda bir AynaDecorator'dur.AynaDecarotor abst sinifi ayni zamanda EvEsyasi miras aldiği 
- * icin, kendisi de bir EvEsyasidir(Ayna üst sinifi). 
- * dolayısıyla bu siniftan nesne türettigimizde, bir ayna nesnesi daha olusturmus oluruz ve bu nesneye ekledigimiz
- * ek ozellikleri kullanabiliriz.
+ * Produce metoduna ek olarak ekleyecegimiz, addBorder metodunu burada yazdik. 
+ * Bu sinifin kendisi ayni zamanda bir EvEsyasi dolayasi ile ayna oldugu icin(AynaDecorator'den) produce metodunu override ettik
+ * bu produce metodunun icinde once saf ayna produce metodunu cagirdik.(AynaDecorator'dan comp ile gelen nesne ile)
+ * daha sonra ek olarak cagiracagimiz addBorder'ı ekledik.
  */
 public class CerceveliAyna extends AynaDecorator{
     /*
@@ -27,15 +23,10 @@ public class CerceveliAyna extends AynaDecorator{
     
     @Override
     public void produce() {
-        System.out.print(getAyna().hashCode()+":");
-        getAyna().produce();
-        addBorder();       
+        getAyna().produce(); //Aynanin saf hali
+        addBorder();         //Ek metod
     }
-    
-    /*
-    * Cerceve ekleme islemini gerceklestirmek
-    * için kullanilan metod.
-    */
+
     public void addBorder(){
         //getAyna()... islemler
         System.out.print(this.hashCode()+":");

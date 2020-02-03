@@ -14,13 +14,14 @@ import component.EvEsyasi;
  */
 
 /*
-* Ayna Implemantasyonuna ek ozellikler eklemek icin, bu decorator sinifini yarattik.
-* Ornegin Ayna'ya ek metod eklemek istersek(border), CerceveAyna adlı bir siniff olusturup bu siniftan miras alınır.
+* Diyelim ki Ayna Implemantasyonunun produce metodunda ek olarak baska bir metod cagirmak istedik.
+* Bunun icin bu decorator sinifini yarattik.
+* Ornegin produce metodunda ek oalrak border metodunu cagirmak istersek, CerceveAyna adlı bir sinif olusturup bu siniftan miras alırız.
 */
 public abstract class AynaDecorator implements EvEsyasi{
     /*
     * Bu nesne, Ayna nesnesinin saf hali icin burada,
-    *yani üzerine herhangi bir metod,ozellik eklenmemiş hali bu nesne ile saglaniyor.
+    * produce metodunun saf hali icin bunu kullanacagiz.
     */
      private EvEsyasi ayna = new Ayna();
      
